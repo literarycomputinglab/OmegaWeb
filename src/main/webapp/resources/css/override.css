@@ -1,0 +1,28 @@
+.ui-datatable table {
+    table-layout: auto !important;
+}
+
+.ui-layout-unit .ui-layout-unit-content {
+    padding: 0 !important;
+}
+
+.ui-datalist-content {
+    border: 0 !important;
+}
+
+.ui-datalist-data {
+    margin: 0 !important;
+}
+
+.ui-panelgrid td, .ui-panelgrid tr {
+    border-style: none !important;
+    padding: 0px !important;
+}
+
+.hide-column-names table thead tr {
+    display: none;
+}
+
+.hide-column-sort-icon th .ui-sortable-column-icon {
+    display : none;
+}

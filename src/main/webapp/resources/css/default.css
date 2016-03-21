@@ -1,0 +1,594 @@
+html, body {
+    font-family: sans-serif;
+    font-size: 12px;
+    height:100%;
+    margin: 0;
+    background-color: #eeeeee;
+    color: #040404;
+}
+
+.originalField {
+    direction: ltr;
+}
+
+.topToolbar {
+    height: 30px;
+}
+
+.topToolbarButton {
+    padding-top: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+    vertical-align: middle;
+}
+
+.accountMenuButton {
+    margin-left: 8px;
+}
+
+.loginField {
+    padding-right: 8px;
+}
+
+#content {
+    height: calc(100% - 46px);
+    margin-top: 5px;
+}
+
+.resetPasswordLink {
+    font-size: 90% !important;
+    margin-right: 40px;
+    color: dimgray !important;
+}
+
+.confirmButton {
+    font-size: 11px !important;
+    margin: 2px !important;
+}
+
+.loadingDialog .ui-dialog-titlebar {
+    display: none !important;
+}
+
+.loadingLabel {
+    font-weight: bold;
+}
+
+.loadingImage {
+    vertical-align: central;
+    margin-left: 16px;
+}
+
+.layout {
+    height: 100%;
+}
+
+.layoutUnit {
+    border: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: transparent;
+}
+
+.resourceTree {
+    width: 100% !important;
+    border: none;
+}
+
+.resourceTreeTitle {
+    margin-left: 2px;
+}
+
+.resourceColumn {
+    font-weight: bolder;
+    height: 26px;
+}
+
+.resourceColumn .ui-state-disabled {
+    opacity: 0.67;
+}
+
+.resourceIndex {
+    margin-left: 8px;
+}
+
+.resourceDescriptionIcon {
+    margin-left: 6px !important;
+    display: inline-block !important;
+}
+
+.resourceTitleFiled {
+    display: inline-table !important;
+}
+
+.resourceInputField {
+    width: 320px;
+}
+
+.translationOrderColumn {
+    width: 16px;
+    text-align: right;
+}
+
+.translationOriginalColumn {
+    line-height: 1.3;
+}
+
+.translationTranslationColumn {
+    width: 50%;
+    line-height: 1.3;
+}
+
+.translationOriginalText {
+    width: 100%;
+    line-height: 1.3;
+} 
+
+.translationTranslationText {
+    width: 100%;
+    line-height: 1.3;
+} 
+
+.translationToolbar {
+    overflow: hidden;
+    margin-bottom: 1px;
+}
+
+.translationToolbarButton {
+    font-size: 11px !important;
+    margin: 2px !important;
+    width: 84px;
+}
+
+.translationToolbarButton .ui-button {
+    width: 82px;
+}
+
+.translationFilterPanel {
+    padding: 0 !important;
+    border: 0;
+    overflow: hidden;
+    background: #eeeeee;
+    border-bottom: 5px solid #eeeeee;
+}
+
+.translationFilterPanel table, td, th {
+    border: none;
+}
+
+.filterPanelGrid {
+    width: 100%;
+}
+
+.filterPanelGrid td {
+    background: #eeeeee;
+}
+
+.translationFilterPanel .ui-panel-content {
+    padding: 5px !important;
+}
+
+.filterLabel {
+    font-size: 90% !important;
+    margin-right: 8px;
+}
+
+.filterStatisticsColumn {
+    text-align: right;
+}
+
+.statisticsLabel {
+    font-size: 90% !important;
+    font-weight: bold;
+    margin-right: 6px;
+}
+
+.filterField {
+    width: calc(100% - 14px) !important;
+    margin-bottom: 5px !important;
+}
+
+.filterField .ui-autocomplete-input {
+    width: 100% !important;
+}
+
+.filterTypes {
+    margin-bottom: 5px !important;
+}
+
+.referenceTopPanel {
+    padding: 0 !important;
+    border: 0;
+    border-top: 5px solid #eeeeee;
+}
+
+.referencePanel {
+    padding: 0 !important;
+    border: 0;
+}
+
+.noteItem {
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+.noteTextEditor {
+    width: 100%;
+}
+
+.glossaryDescriptionText .ui-panel-content {
+    padding-top: 16px !important;
+    padding-bottom: 18px !important;
+}
+
+.glossaryItem {
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+.glossaryName {
+    font-weight: bolder;
+}
+
+.glossaryExtras {
+    margin-right: 8px;
+    font-weight: bold;
+    font-size: 90%;
+}
+
+.glossaryGlossaEditor {
+    width: 100%;
+}
+
+#translationGlossaryAssociateForm table, td, th {
+    border: none;
+}
+
+.glossaryAssociateFilterPanelGrid {
+    width: 100%;
+}
+
+.glossaryAssociateLink {
+    font-size: 90% !important;
+    color: dimgray !important;
+}
+
+.glossaryAssociateButtons {
+    margin-bottom: 6px;
+}
+
+.glossaryAssociateFilterColumnType {
+    width: 15px;
+}
+
+.glossaryAssociateFilterColumnLocked {
+    width: 16px;
+}
+
+.glossaryAssociateFilterColumnDescription {
+    width: 30%;
+}
+
+.colorCircle {
+    border: 1px solid gray;
+    border-radius: 7px;
+    float: left;
+    height: 11px;
+    width: 11px;
+}
+
+.colorCircleText {
+    margin-left: 5px;
+}
+
+.suggestionItem {
+    margin-top: 8px;
+    margin-bottom: 20px;
+}
+
+.suggestionStar {
+    margin-right: 2px;
+}
+
+.suggestionRank {
+    margin-right: 8px;
+    font-size: 80% !important;
+    font-weight: bold;
+}
+
+.suggestionIndex {
+    float: right;
+    font-size: 90%;
+    font-weight: bolder;
+}
+
+.suggestionOriginal {
+}
+
+.suggestionTranslation {
+    text-decoration: none;
+    line-height: 1.3;
+}
+
+.suggestionItem .ui-state-disabled {
+    opacity: 1 !important;
+}
+
+.suggestionAllLink {
+    font-size: 90% !important;
+    color: dimgray !important;
+}
+
+.generateText {
+    width: 98% !important;
+    height: 386px !important;
+}
+
+.generateButtons {
+    margin-top: 4px;
+}
+
+.generateButton {
+    float: right;
+}
+
+.generatePage {
+    margin-left: 8px !important;
+    width: 48px;
+}
+
+.generateAutomatic {
+    margin-left: 16px;
+}
+
+.sourceViewButton {
+    width: 18px !important; 
+    height: 18px !important;
+}
+
+.descriptionTextEditor {
+    width: 98%;
+}
+
+.username {
+    float: right;
+    font-size: 80% !important;
+    font-style: italic;
+    font-weight: normal;
+    color: dimgray;
+}
+
+.usernameField {
+    font-style: italic;
+}
+
+.uploadForm {
+    width: calc(100% - 8px);
+    height: calc(100% - 12px);
+}
+
+.temporaryAreaForm {
+    width: calc(100% - 8px);
+    height: calc(100% - 12px);
+}
+
+.temporaryArea {
+    width: 100%;
+    height: 100%;
+}
+
+.historyLayout {
+    min-height:508px;
+    max-height:508px;
+}
+
+.historyLayoutUnit {
+    border: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.historyTimeColumn {
+    width: 64px;
+    font-size: 85%;
+    padding: 2px !important;
+    padding-left: 5px !important;
+}
+
+.historyOriginalColumn {
+    line-height: 1.3;
+}
+
+.historyTranslationColumn {
+    width: 50%;
+    line-height: 1.3;
+}
+
+historyUsernameColumn {
+    width: 64px;
+}
+
+.historyTitleColumn {
+    font-weight: bolder;
+}
+
+.historyRowCurrent {
+    background-color: beige;
+}
+
+.historyNoteTimeArrow {
+    display: inline-block !important;
+    float: right;
+}
+
+.historyNoteTime {
+    font-size: 85%;
+    text-decoration: none;
+    float: right;
+}
+
+.historyResourceDescription {
+    border: none;
+}
+
+.historyGlossaryDescription {
+    border: none;
+}
+
+.historyButton {
+    margin-top: 8px !important;
+    float: right;
+}
+
+.detailLayout {
+    min-height:534px;
+    max-height:534px;
+}
+
+.detailLayoutUnit {
+    border: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.glossaryTypeColumn {
+    width: 15px;
+}
+
+.glossaryExtrasColumn {
+    width: 18%;
+}
+
+.glossaryUsernameColumn {
+    width: 64px;
+}
+
+.glossaryReferencesColumn {
+    width: 16px;
+    text-align: right;
+    font-size: 90%;
+}
+
+.glossaryLockColumn {
+    width: 16px;
+}
+
+.glossaryFilterPanel {
+    padding: 0 !important;
+    border: 0;
+    overflow: hidden;
+    background: #eeeeee;
+}
+
+.glossaryInputField {
+    width: 98%;
+}
+
+.glossaryReferenceItem {
+    margin-top: 8px;
+    margin-bottom: 24px;
+}
+
+.glossaryReferenceOriginal {
+
+}
+
+.glossaryReferenceTranslation {
+    line-height: 1.3;
+}
+
+.glossaryReferenceLink {
+    text-decoration: none;
+}
+
+.glossaryReferenceIndex {
+    float: right;
+    font-size: 90%;
+    font-weight: bolder;
+}
+
+.showReferenceInTranslationLink {
+    text-decoration: none;
+}
+
+.accountTypeColumn {
+    width: 120px;
+}
+
+.accountEnabledColumn {
+    width: 16px;
+}
+
+.accountInputField {
+    width: 98%;
+}
+
+.accountTypeEditor .ui-inplace-save {
+    display: none !important;
+}
+
+.accountUsernameColumn {
+    width: 14%;
+}
+
+.accountPasswordColumn {
+    width: 14%;
+}
+
+.accountEmailColumn {
+    width: 28%;
+}
+
+.accountResourceItem {
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+.accountResourceIndex {
+    font-weight: bolder;
+    margin-right: 8px;
+}
+
+.supervisionTabview {
+    border: none;
+    padding: 0 !important;
+}
+
+.supervisionTabview .ui-tabs-panel{
+    padding: 0 !important;
+}
+
+.supervisionAccountTable {
+    font-size: 95% !important;
+}
+
+.supervisionAccountTypeColumn {
+    width: 110px;
+}
+
+.supervisionAccountUsernameColumn {
+    width: 90px;
+}
+
+.supervisionAccountNameColumn {
+}
+
+.supervisionAccountNumberColumn {
+    text-align: right;
+    width: 50px;
+}
+
+.supervisionAccountAssignedColumn {
+    width: 10px;
+}
+
+.background_img {
+    background-image: url("/traduco/resources/image/Traduco4Edu_des.png");
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    margin-top: -5px
+};

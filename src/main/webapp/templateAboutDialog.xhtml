@@ -1,0 +1,21 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <p:dialog widgetVar="aboutDialog" header="#{label['template.about.header']}" 
+              modal="true" resizable="false" closeOnEscape="true" width="400" height="400">
+
+        <div style="text-align: center; margin-top: 20px">
+            <p:graphicImage width="360" value="/resources/image/about.png"/>
+        </div>
+
+        <div  style="text-align: center; margin-top: 20px">
+            <span style="font-size: 13px;"><strong><em>#{label['template.about.version']} #{applicationBean.version}</em></strong></span><br/><br/>
+            <span style="font-size: 11px;"><strong>Istituto di Linguistica Computazionale</strong></span><br/>
+            <span style="font-size: 11px;"><strong>"A. Zampolli" CNR - Pisa Italy</strong></span><br/>
+            <span style="font-size: 11px;"><strong> <a style="color: blue" href="http://www.ilc.cnr.it" target="blank">www.ilc.cnr.it</a> </strong></span><br/>
+        </div>
+
+    </p:dialog>
+
+</ui:composition>
