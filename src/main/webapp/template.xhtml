@@ -42,7 +42,7 @@
                 <p:toolbar styleClass="topToolbar">
 
                     <f:facet name="left">
-                        <p:commandLink title="#{label['template.home']}" action="#{homeController.homeAction()}" ajax="false">
+                        <p:commandLink title="#{label['template.home']}" ajax="true" onclick="PF('ticketDialog').show()">
                             <p:graphicImage styleClass="topToolbarButton"  value="/resources/image/home.png"/>
                         </p:commandLink>
                         <p:commandLink title="#{label['template.account']}" action="#{homeController.accountAction()}" ajax="false" 

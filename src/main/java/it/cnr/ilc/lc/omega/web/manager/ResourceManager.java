@@ -5,6 +5,8 @@
  */
 package it.cnr.ilc.lc.omega.web.manager;
 
+import it.cnr.ilc.lc.hibernatesearchtest.Annotation;
+import it.cnr.ilc.lc.hibernatesearchtest.App;
 import it.cnr.ilc.lc.omega.web.domain.ResourceType;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -19,6 +21,10 @@ public class ResourceManager implements Serializable {
     public List<ResourceType> getResourceTypes() {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         return new ArrayList<>();
+    }
+
+    public List<Annotation> getAnnotation(String s) {
+        return App.omegaFacetExample(s);
     }
 
 }

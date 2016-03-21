@@ -56,6 +56,12 @@
             <version>1.2.17</version>
         </dependency>
         
+        <dependency>
+            <groupId>it.cnr.ilc.lc</groupId>
+            <artifactId>HibernateSearchTest</artifactId>
+            <version>1.0-SNAPSHOT</version>            
+        </dependency>
+        
     </dependencies>
 
 
