@@ -3,9 +3,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:util="http://xmlns.jcp.org/jsf/composite/components/util">
 
     <ui:composition template="/template.xhtml">
+
         <ui:define name="content">
 
             <div style="text-align: center;">
@@ -15,7 +17,10 @@
                     </p:effect>
                 </p:outputLabel>
             </div>
-            <div class="background_img" />            
+            <div class="background_img" />
+            <div class="search" style="text-align: center;">
+                <util:search id="searchWord" />
+            </div>
             <div style="text-align: center; position:absolute; bottom:4%; width: 100%">
                 <span style="font-size: 20px; font-weight: bold">#{label['template.about.version']} #{applicationBean.version}</span><br/><br/><br/>
                 <span style="font-size: 16px;">Istituto di Linguistica Computazionale</span><br/>

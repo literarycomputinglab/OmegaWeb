@@ -583,12 +583,18 @@ historyUsernameColumn {
 }
 
 .background_img {
-    background-image: url("/traduco/resources/image/Traduco4Edu_des.png");
+    background-image: url("/omegaWeb/resources/image/Traduco4Edu_des.png");
     background-size: cover;
     height: 100%;
     width: 100%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    margin-top: -5px
-};
+    margin-top: -5px;
+}
+
+.search{
+    background-color:yellowgreen;
+    padding: 20px;
+    margin-top: 30px;
+}
