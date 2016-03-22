@@ -9,23 +9,24 @@
     <ui:composition template="/template.xhtml">
 
         <ui:define name="content">
+            <div class="background_img">
+                <div class="head">
+                    <p:outputLabel style="font-size: 20px; font-weight: bold" value="#{label['home.welcomeMessage']}">
+                        <p:effect type="pulsate" event="load" speed="2500" >
+                            <f:param name="times" value="3"/>
+                        </p:effect>
+                    </p:outputLabel>
+                </div>
+                <div class="search">
+                    <util:search id="searchWord" />
+                </div>
 
-            <div style="text-align: center;">
-                <p:outputLabel style="font-size: 20px; font-weight: bold" value="#{label['home.welcomeMessage']}">
-                    <p:effect type="pulsate" event="load" speed="2500" >
-                        <f:param name="times" value="3"/>
-                    </p:effect>
-                </p:outputLabel>
-            </div>
-            <div class="background_img" />
-            <div class="search" style="text-align: center;">
-                <util:search id="searchWord" />
-            </div>
-            <div style="text-align: center; position:absolute; bottom:4%; width: 100%">
-                <span style="font-size: 20px; font-weight: bold">#{label['template.about.version']} #{applicationBean.version}</span><br/><br/><br/>
-                <span style="font-size: 16px;">Istituto di Linguistica Computazionale</span><br/>
-                <span style="font-size: 16px;">"A. Zampolli" CNR - Pisa Italy</span><br/>
-                <span style="font-size: 16px;"><a style="color: blue" href="http://www.ilc.cnr.it" target="blank">www.ilc.cnr.it</a></span><br/>
+                <div style="text-align: center; position:absolute; bottom:4%; width: 100%">
+                    <span style="font-size: 20px; font-weight: bold">#{label['template.about.version']} #{applicationBean.version}</span><br/><br/><br/>
+                    <span style="font-size: 16px;">Istituto di Linguistica Computazionale</span><br/>
+                    <span style="font-size: 16px;">"A. Zampolli" CNR - Pisa Italy</span><br/>
+                    <span style="font-size: 16px;"><a style="color: blue" href="http://www.ilc.cnr.it" target="blank">www.ilc.cnr.it</a></span><br/>
+                </div>
             </div>
 
         </ui:define>

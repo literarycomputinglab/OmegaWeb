@@ -8,16 +8,20 @@
     <cc:interface>
         <cc:attribute name="searchAction" default="#{searchController.search(cc.attrs.word)}" method-signature="java.lang.String action(java.lang.String)"/>
         <cc:attribute name="word" type="java.lang.String" />
+
     </cc:interface>
 
     <!-- IMPLEMENTATION -->
     <cc:implementation>
         <h:form id="searchForm">
+
+
             <h:outputText id="error" value=""/>
             <br/>
-            <h:inputText id="searchText" styleClass="searchBox" size="75" value="#{cc.attrs.word}"/>
+            <h:inputText id="searchText" styleClass="searchBox" size="75" value="#{cc.attrs.word}" />
 
-            <h:commandButton id="searchButton" value="Search" action="#{cc.attrs.searchAction}" onclick="PF('loadingDialog').show()" />
+            <h:commandButton id="searchButton" value="Search" action="#{cc.attrs.searchAction}" onclick="PF('loadingDialog').show()"  />
+
 
         </h:form>
 

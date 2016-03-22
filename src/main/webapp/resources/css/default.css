@@ -584,6 +584,7 @@ historyUsernameColumn {
 
 .background_img {
     background-image: url("/omegaWeb/resources/image/Traduco4Edu_des.png");
+    opacity:0.9;
     background-size: cover;
     height: 100%;
     width: 100%;
@@ -593,8 +594,20 @@ historyUsernameColumn {
     margin-top: -5px;
 }
 
+.head{
+    position: relative;
+    text-align: center;
+}
+
 .search{
-    background-color:yellowgreen;
+    background-color:rgba(170,170,170,0.4);
+
     padding: 20px;
     margin-top: 30px;
+    position: relative;
+    text-align: center;
+}
+
+.searchBox{
+
 }

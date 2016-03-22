@@ -7,7 +7,7 @@
         <el-resolver>org.primefaces.application.exceptionhandler.PrimeExceptionHandlerELResolver</el-resolver>
         <locale-config>
             <default-locale>en</default-locale>
-            <supported-locale>it</supported-locale>
+            
             <supported-locale>en</supported-locale>
         </locale-config>
         <resource-bundle>

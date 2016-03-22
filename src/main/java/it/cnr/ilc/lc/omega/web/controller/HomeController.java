@@ -50,7 +50,7 @@ public class HomeController
 
     public String translationAction() {
         log(Level.INFO, USER, "navigate to translations");
-        return "welcomePrimefaces";
+        return "";
     }
 
     public boolean isEnableAccountMenu() {

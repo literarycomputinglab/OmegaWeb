@@ -33,7 +33,9 @@
             <ui:include src="/templateTicketDialog.xhtml"/>
 
             <ui:include src="/templateSettingsDialog.xhtml"/>
+
         </h:form>
+
 
         <div id="top">
 
@@ -42,21 +44,23 @@
                 <p:toolbar styleClass="topToolbar">
 
                     <f:facet name="left">
-                        <p:commandLink title="#{label['template.home']}" ajax="true" onclick="PF('ticketDialog').show()">
+
+                        <p:commandLink title="#{label['template.home']}" ajax="false" action="#{homeController.homeAction()}" >
                             <p:graphicImage styleClass="topToolbarButton"  value="/resources/image/home.png"/>
                         </p:commandLink>
-                        <p:commandLink title="#{label['template.account']}" action="#{homeController.accountAction()}" ajax="false" 
-                                       rendered="#{homeController.enableAccountMenu}" onclick="PF('loadingDialog').show()">
-                            <p:graphicImage styleClass="topToolbarButton" value="/resources/image/accounts.png"/>
-                        </p:commandLink>
-                        <p:commandLink title="#{label['template.glossary']}" action="#{homeController.glossaryAction()}" ajax="false" 
-                                       rendered="#{homeController.enableGlossaryMenu}" onclick="PF('loadingDialog').show()">
+
+                        <p:commandLink title="#{label['template.glossary']}" action="#{homeController.glossaryAction()}" ajax="true" onclick="PF('settingsDialog').show()">
                             <p:graphicImage styleClass="topToolbarButton" value="/resources/image/resource.png"/>
-                        </p:commandLink>                        
-                        <p:commandLink title="#{label['template.translation']}" action="#{homeController.translationAction()}" ajax="false" 
-                                       rendered="#{homeController.enableTranslationMenu}" onclick="PF('loadingDialog').show()">
+                        </p:commandLink>  
+
+                        <p:commandLink title="#{label['template.translation']}" action="#{homeController.translationAction()}" ajax="true" onclick="PF('ticketDialog').show()">
                             <p:graphicImage styleClass="topToolbarButton" value="/resources/image/document.png"/>
                         </p:commandLink>
+
+                        <p:commandLink title="#{label['template.account']}" ajax="true" onclick="PF('settingsDialog').show()">
+                            <p:graphicImage styleClass="topToolbarButton" value="/resources/image/accounts.png"/>
+                        </p:commandLink>
+
                     </f:facet>
 
                     <f:facet name="right">
@@ -76,9 +80,9 @@
         </div>
 
         <div id="content">
-            <h:form>
-                <ui:insert name="content"/>
-            </h:form>
+
+            <ui:insert name="content"/>
+
         </div>
 
     </h:body>
