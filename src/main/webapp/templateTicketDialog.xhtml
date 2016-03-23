@@ -6,8 +6,8 @@
     <p:dialog widgetVar="ticketDialog" header="#{label['template.ticket.header']}"
               modal="true" resizable="false" closeOnEscape="true" width="500" height="400">
         <h:form id="ticketFrame">
-            <p:dataList var="annotation" value="#{searchController.annotations}" >
-                #{annotation.cont.data}
+            <p:dataList var="source" value="#{searchController.sources}" >
+                #{source.id}, #{source.content.data}
             </p:dataList>
 
         </h:form>

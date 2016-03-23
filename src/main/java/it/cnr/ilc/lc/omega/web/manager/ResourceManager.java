@@ -31,9 +31,9 @@ public class ResourceManager implements Serializable {
 //        return App.omegaWorks();
 //    }
 //
-//    public List<Source> getSourceKWC(String keyWord) {
-//        return App.omegaWorks();
-//    }
+    public List<Source> getSourceKWC(String keyWord) {
+        return App.omegaKeySearch(keyWord);
+    }
 //
 //    public List<Annotation> getWordFragments() {
 //        App.omegafragments();

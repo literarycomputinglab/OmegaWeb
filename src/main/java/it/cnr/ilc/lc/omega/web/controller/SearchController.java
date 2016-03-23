@@ -6,6 +6,7 @@
 package it.cnr.ilc.lc.omega.web.controller;
 
 import it.cnr.ilc.lc.hibernatesearchtest.Annotation;
+import it.cnr.ilc.lc.hibernatesearchtest.Source;
 import it.cnr.ilc.lc.omega.web.manager.ResourceManager;
 import java.io.Serializable;
 import java.util.List;
@@ -23,13 +24,15 @@ import org.apache.log4j.Level;
 public class SearchController extends BaseController implements Serializable {
 
     List<Annotation> annotations;
+    List<Source> sources;
 
     @Inject
     ResourceManager manager;
 
     public String search(String s) {
         log(Level.INFO, "u", "search: " + s);
-        annotations = manager.getAnnotation(s);
+        //annotations = manager.getAnnotation(s);
+        sources = manager.getSourceKWC(s);
         return "";
     }
 
@@ -39,6 +42,14 @@ public class SearchController extends BaseController implements Serializable {
 
     public void setAnnotations(List<Annotation> annotations) {
         this.annotations = annotations;
+    }
+
+    public List<Source> getSources() {
+        return sources;
+    }
+
+    public void setSources(List<Source> sources) {
+        this.sources = sources;
     }
 
 }

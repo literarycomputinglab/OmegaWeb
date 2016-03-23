@@ -71,7 +71,7 @@
 
                         <p:menuButton styleClass="topToolbarButton accountMenuButton" value="#{applicationBean.emptyMessage(homeController.accountName, label['template.noname'])}">
 
-                            <p:menuitem icon="ui-icon-power" value="#{label['template.exit']}" action="#{homeController.exitAction()}" ajax="false"/>
+                            <p:menuitem icon="ui-icon-power" value="#{label['template.exit']}" action="#{applicationBean.shutdown()}" ajax="false"/>
                         </p:menuButton>
                     </f:facet>
 

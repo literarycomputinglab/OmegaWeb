@@ -5,6 +5,7 @@
  */
 package it.cnr.ilc.lc.omega.web.controller;
 
+import it.cnr.ilc.lc.hibernatesearchtest.App;
 import it.cnr.ilc.lc.omega.web.domain.ResourceType;
 import it.cnr.ilc.lc.omega.web.manager.ResourceManager;
 import java.util.List;
@@ -31,6 +32,11 @@ public class ApplicationBean {
     @PostConstruct
     public void init() {
         resourceTypes = resourceManager.getResourceTypes();
+    }
+
+    public String  shutdown() {
+        App.shutdown();
+        return "";
     }
 
     public List<ResourceType> getResourceTypes() {
