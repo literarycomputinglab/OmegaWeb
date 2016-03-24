@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:cc="http://xmlns.jcp.org/jsf/composite">
+      xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+      xmlns:p="http://primefaces.org/ui">
 
     <!-- INTERFACE -->
     <cc:interface>
@@ -18,9 +19,8 @@
 
             <h:outputText id="error" value=""/>
             <br/>
-            <h:inputText id="searchText" styleClass="searchBox" size="75" value="#{cc.attrs.word}" />
-
-            <h:commandButton id="searchButton" value="Search" action="#{cc.attrs.searchAction}" onclick="PF('loadingDialog').show()"  />
+            <p:inputText id="searchText" styleClass="searchBox" size="75" placeholder="Insert a word!" value="#{cc.attrs.word}" />
+            <p:commandButton id="searchButton" value="Search" icon="ui-icon-search" actionListener="#{cc.attrs.searchAction}" onsuccess="PF('ticketDialog').show(); PF('loadingDialog').hide()" onclick="PF('loadingDialog').show()" update="dialogs:ticketFrame:resultList" styleClass="es" />
 
 
         </h:form>

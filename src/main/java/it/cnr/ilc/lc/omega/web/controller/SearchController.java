@@ -7,6 +7,7 @@ package it.cnr.ilc.lc.omega.web.controller;
 
 import it.cnr.ilc.lc.hibernatesearchtest.Annotation;
 import it.cnr.ilc.lc.hibernatesearchtest.Source;
+import it.cnr.ilc.lc.omega.web.domain.KwicHit;
 import it.cnr.ilc.lc.omega.web.manager.ResourceManager;
 import java.io.Serializable;
 import java.util.List;
@@ -25,6 +26,7 @@ public class SearchController extends BaseController implements Serializable {
 
     List<Annotation> annotations;
     List<Source> sources;
+    private List<KwicHit> hits;
 
     @Inject
     ResourceManager manager;
@@ -32,7 +34,7 @@ public class SearchController extends BaseController implements Serializable {
     public String search(String s) {
         log(Level.INFO, "u", "search: " + s);
         //annotations = manager.getAnnotation(s);
-        sources = manager.getSourceKWC(s);
+        hits = manager.getSourceKWC(s);
         return "";
     }
 
@@ -50,6 +52,14 @@ public class SearchController extends BaseController implements Serializable {
 
     public void setSources(List<Source> sources) {
         this.sources = sources;
+    }
+
+    public List<KwicHit> getHits() {
+        return hits;
+    }
+
+    public void setHits(List<KwicHit> hits) {
+        this.hits = hits;
     }
 
 }

@@ -22,7 +22,7 @@
 
         <p:growl id="growl" showDetail="true"/>
 
-        <h:form>
+        <h:form id="dialogs">
 
             <ui:include src="/templateConfirmDialog.xhtml"/>
 
@@ -57,7 +57,7 @@
                             <p:graphicImage styleClass="topToolbarButton" value="/resources/image/document.png"/>
                         </p:commandLink>
 
-                        <p:commandLink title="#{label['template.account']}" ajax="true" onclick="PF('settingsDialog').show()">
+                        <p:commandLink title="#{label['template.account']}" ajax="true" onclick="PF('confirmDialog').show()">
                             <p:graphicImage styleClass="topToolbarButton" value="/resources/image/accounts.png"/>
                         </p:commandLink>
 
