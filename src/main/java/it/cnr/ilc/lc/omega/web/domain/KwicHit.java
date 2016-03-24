@@ -40,29 +40,24 @@ public class KwicHit {
     }
 
     public String getContextLeftWindow() {
-        if (getContextLeft().length() > 40) {
-            return getContextLeft().substring(getContextLeft().length() - 40, getContextLeft().length());
-        } else {
-            int n = 40 - getContextLeft().length();
-            StringBuilder padding = new StringBuilder();
-            for (int i = 0; i < n; i++) {
-                padding.append('.');
-            }
-            return padding.append(getContextLeft()).toString();
+
+        int n = 40 - getContextLeft().length();
+        StringBuilder padding = new StringBuilder();
+        for (int i = 0; i < n; i++) {
+            padding.append("_");
         }
+        String ret = padding.append(getContextLeft()).toString();
+        return ret.replace(' ', '_'); 
     }
 
     public String getContextRightWindow() {
-        if (getContextRight().length() > 40) {
-            return getContextRight().substring(0, 40);
-        } else {
-            int n = 40 - getContextRight().length();
-            StringBuilder padding = new StringBuilder();
-            for (int i = 0; i < n; i++) {
-                padding.append('.');
-            }
-            return getContextRight().concat(padding.toString());
+        int n = 40 - getContextRight().length();
+        StringBuilder padding = new StringBuilder();
+        for (int i = 0; i < n; i++) {
+            padding.append('_');
         }
+        String ret = getContextRight().concat(padding.toString());
+        return ret.replace(' ', '_');
     }
 
     @Override
