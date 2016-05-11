@@ -4,7 +4,8 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:util="http://xmlns.jcp.org/jsf/composite/components/util">
+      xmlns:util="http://xmlns.jcp.org/jsf/composite/components/util"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
 
     <ui:composition template="/template.xhtml">
 
@@ -18,7 +19,24 @@
                     </p:outputLabel>
                 </div>
                 <div class="search">
-                    <util:search id="searchWord" />
+                    <h:form id="result">
+
+                        <util:search id="searchWord" />
+                        
+                        <p:dataScroller id="resultScroller" value="#{searchController.hits}" var="hit" chunkSize="20" mode="inline" scrollHeight="400" style="margin-top: 20px;" class="dataScroller">
+                            <f:facet name="header"> 
+                                Scroll Down to Load More Results [no. #{searchController.hits.size()}]
+                            </f:facet>
+
+                            <h:panelGrid columns="4" style="width:100%" >
+                                <h:outputText style="font-family: monospace; font-style: italic" escape="false" value="#{hit.sourceRef}" />
+                                <h:outputText style="font-family: monospace" escape="false" value="#{hit.contextLeftWindow}"/>
+                                <h:outputText style="font-family: monospace;background-color: yellow" escape="false" value="#{hit.matchWord}" />
+                                <h:outputText style="font-family: monospace" escape="false" value="#{hit.contextRightWindow}"/>
+                            </h:panelGrid>
+                        </p:dataScroller>
+
+                    </h:form>
                 </div>
 
                 <div style="text-align: center; position:absolute; bottom:4%; width: 100%">

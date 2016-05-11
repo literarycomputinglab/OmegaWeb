@@ -14,7 +14,9 @@ public class KwicHit {
     private String contextLeft;
     private String matchWord;
     private String contextRight;
+    private String sourceRef;
 
+    private static final String  PADDING = "&nbsp;";
     public String getContextLeft() {
         return contextLeft;
     }
@@ -44,26 +46,35 @@ public class KwicHit {
         int n = 40 - getContextLeft().length();
         StringBuilder padding = new StringBuilder();
         for (int i = 0; i < n; i++) {
-            padding.append("_");
+            padding.append(PADDING);
         }
         String ret = padding.append(getContextLeft()).toString();
-        return ret.replace(' ', '_'); 
+        return ret.replace(" ", PADDING); 
     }
 
     public String getContextRightWindow() {
         int n = 40 - getContextRight().length();
         StringBuilder padding = new StringBuilder();
         for (int i = 0; i < n; i++) {
-            padding.append('_');
+            padding.append(PADDING);
         }
         String ret = getContextRight().concat(padding.toString());
-        return ret.replace(' ', '_');
+        return ret.replace(" ", PADDING); 
     }
 
+    public String getSourceRef() {
+        return sourceRef;
+    }
+
+    public void setSourceRef(String sourceRef) {
+        this.sourceRef = sourceRef;
+    }
+
+    
     @Override
     public String toString() {
 
-        return String.format("[%s] <%s> [%s]", getContextLeft(), getMatchWord(), getContextRight());
+        return String.format("(%s): [%s] <%s> [%s]", getSourceRef(), getContextLeft(), getMatchWord(), getContextRight());
 
     }
 

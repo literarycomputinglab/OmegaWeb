@@ -14,17 +14,13 @@
 
     <!-- IMPLEMENTATION -->
     <cc:implementation>
-        <h:form id="searchForm">
-
-
             <h:outputText id="error" value=""/>
             <br/>
             <p:inputText id="searchText" styleClass="searchBox" size="75" placeholder="Insert a word!" value="#{cc.attrs.word}" />
-            <p:commandButton id="searchButton" value="Search" icon="ui-icon-search" actionListener="#{cc.attrs.searchAction}" onsuccess="PF('ticketDialog').show(); PF('loadingDialog').hide()" onclick="PF('loadingDialog').show()" update="dialogs:ticketFrame:resultList" styleClass="es" />
-
-
-        </h:form>
-
+            <p:commandButton id="searchButton" value="Search" icon="ui-icon-search" 
+                             actionListener="#{cc.attrs.searchAction}" oncomplete="PF('loadingDialog').hide()"
+                             update="@form"   ajax="true" onclick="PF('loadingDialog').show()" 
+                             styleClass="es"/>
 
     </cc:implementation>
 

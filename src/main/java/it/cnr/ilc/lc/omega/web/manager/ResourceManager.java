@@ -5,7 +5,6 @@
  */
 package it.cnr.ilc.lc.omega.web.manager;
 
-import com.sun.javafx.scene.text.HitInfo;
 import it.cnr.ilc.lc.hibernatesearchtest.Annotation;
 import it.cnr.ilc.lc.hibernatesearchtest.App;
 import it.cnr.ilc.lc.hibernatesearchtest.Source;
@@ -16,12 +15,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  *
  * @author angelo
  */
 public class ResourceManager implements Serializable {
+
+    private static final Logger logger = LogManager.getLogger(ResourceManager.class);
+    private static final int CTXLEN = 50;
 
     public List<ResourceType> getResourceTypes() {
         return new ArrayList<>();
@@ -52,20 +56,24 @@ public class ResourceManager implements Serializable {
         for (Source source : sources) {
             String content = source.getContent().getData();
             Matcher m = p.matcher(content);
-
+            int count = 0;
             while (m.find()) {
                 KwicHit kwic = new KwicHit();
-                String sx = content.substring((m.start() < 40) ? 0 : m.start() - 40, m.start());
+                String sx = content.substring((m.start() < CTXLEN) ? 0 : m.start() - CTXLEN, m.start());
                 String w = m.group(1);
-                String dx = content.substring(m.end(), (m.end() + 40 > content.length()) ? content.length() : m.end() + 40);
+                String dx = content.substring(m.end(), (m.end() + CTXLEN > content.length()) ? content.length() : m.end() + CTXLEN);
 
                 kwic.setMatchWord(w);
                 kwic.setContextLeft(sx);
                 kwic.setContextRight(dx);
+                kwic.setSourceRef(source.getUri());
                 hits.add(kwic);
+                count++;
 
             }
+            logger.info(String.format("In %s found %2$7d hits", source.getUri(), count));
         }
+        logger.info("hitsPopulate hits: " + hits);
 
         return hits;
     }
@@ -73,10 +81,11 @@ public class ResourceManager implements Serializable {
     public static void main(String[] args) {
         ResourceManager manager = new ResourceManager();
         List<KwicHit> hits = null;
-        hits = manager.getSourceKWC("E");
-        for (KwicHit hit : hits) {
-            System.err.println(hit.toString());
-        }
+        hits = manager.getSourceKWC("bobbe");
+//        for (KwicHit hit : hits) {
+//            System.err.println(hit.toString());
+//        }
+        System.err.println("End!");
 
     }
 }

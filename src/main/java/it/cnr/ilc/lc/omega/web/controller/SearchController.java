@@ -12,6 +12,7 @@ import it.cnr.ilc.lc.omega.web.manager.ResourceManager;
 import java.io.Serializable;
 import java.util.List;
 import javax.enterprise.context.SessionScoped;
+
 import javax.inject.Inject;
 import javax.inject.Named;
 import org.apache.log4j.Level;
@@ -26,7 +27,7 @@ public class SearchController extends BaseController implements Serializable {
 
     List<Annotation> annotations;
     List<Source> sources;
-    private List<KwicHit> hits;
+    private List<KwicHit> hits = null;
 
     @Inject
     ResourceManager manager;
@@ -34,7 +35,13 @@ public class SearchController extends BaseController implements Serializable {
     public String search(String s) {
         log(Level.INFO, "u", "search: " + s);
         //annotations = manager.getAnnotation(s);
+        if (null != hits) {
+            hits.clear();
+            hits = null;
+        }
         hits = manager.getSourceKWC(s);
+        log(Level.INFO, "u", "number of hits : " + hits);
+
         return "";
     }
 
@@ -55,6 +62,7 @@ public class SearchController extends BaseController implements Serializable {
     }
 
     public List<KwicHit> getHits() {
+        log(Level.INFO, "u", "retrieve " + ((null!= hits)?hits.size():"no") + " hits from server");
         return hits;
     }
 
